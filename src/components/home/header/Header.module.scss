@@ -1,0 +1,34 @@
+.navbox {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid gray;
+  z-index: 999;
+  background-color: white;
+}
+
+nav {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navmenu {
+  display: flex;
+
+  a {
+    text-decoration: none;
+    color: black;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      color: red;
+    }
+  }
+}

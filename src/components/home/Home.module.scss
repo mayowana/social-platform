@@ -1,0 +1,18 @@
+.home {
+    display: flex;
+    background-color: whitesmoke;
+    margin-top: 6.5rem;
+    min-height: 100vh;
+}
+
+.homebar {
+    flex: 0.25;
+}
+
+.homebox {
+    flex: 0.5;
+}
+
+.widgets {
+        flex: 0.25;
+}

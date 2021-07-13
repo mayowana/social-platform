@@ -1,0 +1,32 @@
+.homebar {
+    position: fixed;
+    width: 25%;
+}
+
+.homebar__cont {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #D4D4D4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    border-radius: 2em;
+}
+
+.avatarbox {
+    background-image: url('../../../media/back.jpg');
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    margin: 2rem 0;
+}

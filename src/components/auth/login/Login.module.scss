@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.loginform {
+    background-color: white;
+    height: 60vh;
+    width: 30vw;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding: 0 2rem;
+
+        h3 {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        input {
+            margin-bottom: 3rem;
+            border: none;
+            border-bottom: 2px solid black;
+            background: none;
+            color: black;
+            padding-bottom: 0.5rem;
+            outline: none;
+
+            &::placeholder {
+                color: black;
+                font-size: 100%;
+            }
+        }
+
+        button {
+            width: 100%;
+            background-color: #A52A2A;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.register {
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+
+
