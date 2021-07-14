@@ -5,8 +5,7 @@ const Widgets = () => {
     return (
         <>
         <div className={styles.widgetbox}>
-            y
-
+        
         </div>
         </>
     )
