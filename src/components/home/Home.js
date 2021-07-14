@@ -5,6 +5,7 @@ import Homebox from "./homebox/Homebox";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import Login from "../auth/login/Login";
+import Widgets from "./widgets/Widgets";
 
 const Home = () => {
 
@@ -23,7 +24,9 @@ const Home = () => {
       <div className={styles.homebox}>
         <Homebox />
       </div>
-      <div className={styles.widgets}></div>
+      <div className={styles.widgets}>
+        <Widgets />
+      </div>
     </div>
     </div>
        : <Login />}</div>

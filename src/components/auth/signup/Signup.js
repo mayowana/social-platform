@@ -20,7 +20,7 @@ const Signup = () => {
     auth.createUserWithEmailAndPassword(user, pass).then((userAuth) => {
         userAuth.user
         .updateProfile({
-          displayName: fname,
+          displayName: `${fname} ${lname}`,
         })
         .then(() => {
             dispatch(login({
