@@ -5,6 +5,7 @@ import { useState } from "react";
 import { auth } from "../../../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../../../features/userSlice";
+import { useHistory } from "react-router";
 
 const Signup = () => {
   const [fname, setFname] = useState("");
@@ -12,24 +13,26 @@ const Signup = () => {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  
-
-  const SignUpApp = () => {
+  const SignUpApp = (e) => {
+    e.preventDefault();
     auth.createUserWithEmailAndPassword(user, pass).then((userAuth) => {
         userAuth.user
         .updateProfile({
           displayName: fname,
         })
-        .then((userAuth) => {
+        .then(() => {
             dispatch(login({
                 email: userAuth.user.email,
                 uid: userAuth.user.uid,
-                displayName: fname,
+                displayName: `${fname} ${lname}`,
             }))
+            history.push('/home');
         });
-    }).catch(error => alert(error.message));
+    }).catch(error => alert(error));
   };
+
 
   const handleInvalidForm = () => {
     alert("Form not complete");

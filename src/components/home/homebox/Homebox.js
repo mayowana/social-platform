@@ -5,10 +5,14 @@ import { db } from "../../../firebase";
 import styles from "./Homebox.module.scss";
 import Post from "./posts/Post";
 import firebase from "firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../features/userSlice";
+import FlipMove from "react-flip-move";
 
 const Homebox = () => {
   const [posts, setPosts] = useState([]);
   const [input, setInput] = useState("");
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     db.collection("posts").orderBy('timestamp', 'desc')
@@ -26,7 +30,7 @@ const Homebox = () => {
     e.preventDefault();
 
     db.collection("posts").add({
-      username: "Oluwamayowa George",
+      username: user.displayName,
       content: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
@@ -51,6 +55,7 @@ const Homebox = () => {
       </div>
 
       <div className={styles.postbox}>
+      <FlipMove>
         {posts.map(({ id, data: { username, content, photoURL } }) => (
           <Post
             key={id}
@@ -59,6 +64,7 @@ const Homebox = () => {
             photoURL={photoURL}
           />
         ))}
+        </FlipMove>
       </div>
     </div>
   );

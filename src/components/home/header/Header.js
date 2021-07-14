@@ -4,8 +4,18 @@ import logo from '../../../media/logob.svg'
 import HomeIcon from '@material-ui/icons/Home';
 import PersonIcon from '@material-ui/icons/Person';
 import ForumIcon from '@material-ui/icons/Forum';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../features/userSlice';
+import { auth } from '../../../firebase';
 
 const Header = () => {
+
+    const dispatch = useDispatch();
+    const logOut = () => {
+        dispatch(logout());
+        auth.signOut();
+    }
 
     return (
         <>
@@ -18,6 +28,7 @@ const Header = () => {
                         <Link> <HomeIcon /> Home</Link>
                         <Link> <PersonIcon /> Profile</Link>
                         <Link> <ForumIcon /> Messages</Link>
+                        <Link onClick={logOut}> <ExitToAppIcon /> Logout </Link>
                     </div>
                 </nav>
             </div>
